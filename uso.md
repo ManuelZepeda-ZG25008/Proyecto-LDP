@@ -85,7 +85,7 @@ uvicorn src.api.main:app --reload
 Cuando clonen el proyecto y ejecuten el comando `uvicorn src.api.main:app --reload`, FastAPI ejecutará un evento de `startup` que llama a la función `init_db()`. En ese preciso milisegundo, SQLite revisará si el archivo existe; si no está, **lo creará virgen en la raíz del proyecto y montará las tablas automáticamente**. Así que ustedes solo denle *play* al servidor y la base de datos se armará solita.
 
 
-## 🧠 6. Reglas de Negocio del Dominio (El Estándar de Validación)
+##  6. Reglas de Negocio del Dominio (El Estándar de Validación)
 
 En el módulo de **Clientes** dejé sembradas reglas estrictas en la entidad de dominio (`src/domain/entities/client.py`). 
 

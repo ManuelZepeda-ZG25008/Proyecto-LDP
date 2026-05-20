@@ -1,15 +1,21 @@
 from fastapi import FastAPI
+from src.infrastructure.persistence.sqlite_connection import init_db
+from src.api.middleware.error_handler import register_error_handlers
+from src.api.controllers.client_controller import router as client_router
 
 app = FastAPI(
-    title="Sistema de Control de Paquetería - DDD",
-    description="API robusta bajo principios de Clean Architecture y DDD",
+    title="Sistema de Control de Paquetería ",
     version="1.0.0"
 )
 
-@app.get("/")
+@app.on_event("startup")
+def on_startup():
+    init_db()
+
+register_error_handlers(app)
+
+app.include_router(client_router)
+
+@app.get("/", tags=["General"])
 def read_root():
-    return {
-        "status": "Online",
-        "architecture": "Clean Architecture / DDD",
-        "environment": "Development"
-    }
+    return {"message": "Bienvenido al Sistema de Control de Paquetería"}

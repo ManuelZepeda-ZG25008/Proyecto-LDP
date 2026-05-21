@@ -25,6 +25,18 @@ def init_db():
             direccion TEXT NOT NULL
         );
     """)
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS deliveries (
+            id TEXT PRIMARY KEY,
+            package_id TEXT NOT NULL,
+            client_id TEXT NOT NULL,
+            direccion_destino TEXT NOT NULL,
+            estado TEXT NOT NULL,
+            fecha_entrega_estimada TEXT NOT NULL,
+            notas TEXT DEFAULT ''
+        );
+    """)
     
     conn.commit()
     conn.close()

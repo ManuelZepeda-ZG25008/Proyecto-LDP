@@ -37,6 +37,19 @@ def init_db():
             notas TEXT DEFAULT ''
         );
     """)
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS packages (
+            id TEXT PRIMARY KEY,
+            descripcion TEXT NOT NULL,
+            peso REAL NOT NULL,
+            destinatario_id TEXT NOT NULL,
+            direccion_entrega TEXT NOT NULL,
+            estado TEXT NOT NULL
+        );
+    """)
+
+    
     
     conn.commit()
     conn.close()

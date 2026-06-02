@@ -17,7 +17,7 @@ class PackageNotFoundError(ResourceNotFoundError):
     \"\"\"Hereda de la base. El middleware ya sabe qué hacer con ella.\"\"\"
     pass
 
-Cuando lances el error en tu caso de uso con un raise PackageNotFoundError("El paquete no existe, maje"), el sistema detendrá el flujo y le enviará al cliente un JSON fino con código 404 automáticamente. ¡No tenés que configurar nada en el API!
+Cuando lances el error en tu caso de uso con un raise PackageNotFoundErro el sistema detendrá el flujo y le enviará al cliente un JSON fino con código 404 automáticamente. ¡No tenés que configurar nada en el API!
 
 
  3. El Paso a Paso para Crear tu CRUD (El Clonador)

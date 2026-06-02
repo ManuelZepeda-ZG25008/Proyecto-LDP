@@ -4,10 +4,10 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Base de datos local (Para que no subás tu DB de pruebas)
+# Base de datos local 
 paqueteria.db
 
-# Entorno virtual completo (Por si las moscas, aunque ya tenga su propio ignore)
+# Entorno virtual completo 
 .venv/
 
 .idea

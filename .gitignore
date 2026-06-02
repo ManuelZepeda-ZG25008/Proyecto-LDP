@@ -9,3 +9,5 @@ paqueteria.db
 
 # Entorno virtual completo (Por si las moscas, aunque ya tenga su propio ignore)
 .venv/
+
+.idea

@@ -46,3 +46,7 @@ Para solventar la ausencia de bases de datos relacionales, la persistencia tempo
 idPaquete[]: Almacena el identificador único (entero).
 pesoPaquete[]: Almacena el peso físico del paquete (real).
 estadoPaquete[]: Almacena el código de estado actual (1, 2 o 3).
+
+
+
+para ejecutar los test, esperar a .venv y luego ejecutar python -m pytest tests/ -v

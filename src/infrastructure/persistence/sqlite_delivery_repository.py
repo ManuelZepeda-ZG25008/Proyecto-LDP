@@ -4,7 +4,7 @@ from src.domain.repositories.delivery_repository import DeliveryRepository
 from src.infrastructure.persistence.sqlite_connection import get_db_connection
 
 class SQLiteDeliveryRepository(DeliveryRepository):
-    """Implementación real del repositorio de Entregas usando SQLite y SQL puro"""
+    """Implementación real del repositorio delivery"""
 
     def save(self, delivery: Delivery) -> None:
         conn = get_db_connection()

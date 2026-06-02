@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from src.infrastructure.persistence.sqlite_connection import init_db
 from src.api.middleware.error_handler import register_error_handlers
 from src.api.controllers.client_controller import router as client_router
-from src.api.controllers.delivery_controller import router as delivery_router  # ← esta línea
+from src.api.controllers.delivery_controller import router as delivery_router  
 from src.api.controllers.package_controller import (
     router as package_router
 )

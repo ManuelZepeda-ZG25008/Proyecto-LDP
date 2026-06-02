@@ -4,7 +4,7 @@ from src.domain.repositories.client_repository import ClientRepository
 from src.infrastructure.persistence.sqlite_connection import get_db_connection
 
 class SQLiteClientRepository(ClientRepository):
-    """Implementación real del repositorio usando SQLite y SQL puro."""
+    """Implementación real del repositorio cliente"""
 
     def save(self, client: Client) -> None:
         conn = get_db_connection()

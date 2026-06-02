@@ -1,0 +1,35 @@
+name: Tests Unitarios y Cobertura
+
+# Se ejecutará cada vez que hagan push a la rama main o master
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Clona el código del repositorio
+    - name: Checkout del código
+      uses: actions/checkout@v4
+
+    # 2. Prepara el entorno de Python
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11" 
+
+    # 3. Instala las librerías de tu proyecto y las de testing
+    - name: Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-asyncio pytest-cov pytest-mock httpx
+
+    # 4. Ejecuta los tests y muestra la cobertura
+    - name: Ejecutar Pruebas con Pytest
+      run: |
+        python -m pytest tests/ -v --cov=src
